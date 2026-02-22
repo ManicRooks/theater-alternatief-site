@@ -55,7 +55,7 @@ const productions = [
 
           <div class={`production-item__image-container ${className}`}>
             <img
-              src={`resources/images/productions/${production.id}.jpg`}
+              src={`${import.meta.env.BASE_URL}resources/images/productions/${production.id}.jpg`}
               title={production.title}
               alt={production.title}
             />
