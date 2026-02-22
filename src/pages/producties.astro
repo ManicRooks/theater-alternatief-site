@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const productions = [
+  { id: "kindertransport", title: "Kindertransport", date: "april 2025", class: "white" },
+  { id: "feeks", title: "De getemde feeks", date: "februari 2024", class: "white" },
+  { id: "bloedbruiloft", title: "Bloedbruiloft", date: "april 2023", class: "white" },
+  { id: "adameva", title: "Adam en Eva in het aards paradijs", date: "april 2022", class: "white" },
+  { id: "beautyqueen", title: "The Beauty Queen of Leenane", date: "december 2021", class: "white" },
+  { id: "almostmaine", title: "Almost, Maine", date: "december 2019", style: "notitle", class: "white" },
+  { id: "blauweregen", title: "De blauweregen", date: "apil 2019", style: "notitle", class: "white" },
+  { id: "hartzeer", title: "Hartzeer", date: "november 2018" },
+  { id: "liaisons", title: "Les liaisons Dangereuses", date: "april 2018", style: "notitle", class: "white" },
+  { id: "mochtjedenken", title: "Mocht je die dag aan me denken", date: "oktober 2017" },
+  { id: "wit", title: "Wit is altijd schoon", date: "december 2016", style: "notitle" },
+  { id: "blueroom", title: "The Blue Room", date: "april 2016" },
+  { id: "zomerdag", title: "Een Zomerdag", date: "november 2015", style: "notitle" },
+  { id: "knijtejong", title: "Het Knijtejong", date: "september 2014", class: "white" },
+  { id: "tramlijn", title: "Tramlijn Begeerte", date: "november 2013", style: "notitle" },
+  { id: "piano", title: "De Piano", date: "oktober 2012", style: "notitle" },
+  { id: "lear", title: "Koning Lear", date: "mei 2012", style: "notitle" },
+  { id: "april", title: "Aprilse Grillen", date: "november 2011", style: "notitle" },
+  { id: "virginia", title: "Wie is er bang van Virginia Woolf?", date: "april 2011", style: "notitle" },
+  { id: "stoel", title: "De Stoel van Stanislavski", date: "oktober 2010", style: "notitle" },
+  { id: "rennen", title: "Rennen", date: "september 2009", style: "notitle" },
+  { id: "oscar", title: "Oscar en mammie Roos", date: "november 2008", style: "notitle" } 
+];
+---
+
+<Layout>
+<body>
+     <nav class="navbar navbar-productions">
+        <div class="container justify-content-lg-between justify-content-center">
+            <a class="navbar-brand" href="/">
+                <img src="/resources/images/logo.png?v=2" alt="Theater Alternatief">
+            </a>            
+        </div>
+    </nav>
+
+<div class="container">
+  <h1 class="text-center m-3">Onze producties</h1>
+  <div class="productions">
+
+    {productions.map((production) => {
+      const notitle = !production.style || production.style !== "notitle";
+      const className = production.class
+        ? `production-img-${production.class}`
+        : "production-img-default";
+
+      return (
+        <div class="production-item m-4">
+          <span class="production-item__date pb-2">
+            {production.date}
+          </span>
+
+          <div class={`production-item__image-container ${className}`}>
+            <img
+              src={`/resources/images/productions/${production.id}.jpg`}
+              title={production.title}
+              alt={production.title}
+            />
+
+            {notitle && (
+              <span class="production-item__title pb-4">
+                {production.title}
+              </span>
+            )}
+          </div>
+        </div>
+      );
+    })}
+
+  </div>
+</div>
+</body>
+
+
+</Layout>

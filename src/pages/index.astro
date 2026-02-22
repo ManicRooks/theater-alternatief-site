@@ -1,11 +1,365 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+
+<body>
+ <main>
+            <nav class="navbar navbar-main navbar-expand">
+                <div class="container justify-content-lg-between justify-content-center">
+                    <a class="navbar-brand" href="/">
+                        <img src="/resources/images/logo.png?v=2" alt="Theater Alternatief">
+                    </a>
+
+                    <div>
+                        <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5 d-none d-lg-flex">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link" href="#over">Kindertransport</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#voorstellingen">Voorstellingen</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link" href="#groep">Onze groep</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+
+            <section class="hero-section" id="home">
+            
+                <div class="container d-flex justify-content-center align-items-center">
+                    <div class="row">
+
+                        <div class="col-12 mt-auto mb-5 text-center">
+                            <span class="subtitle">Theater Alternatief presenteert</span>
+
+                            <h1 class="text-white">Kindertransport</h1>
+                           
+                            <a class="btn custom-btn m-3" href="#over">Lees meer</a>
+                            <a class="btn custom-btn m-3" href="#voorstellingen">Reserveren</a>
+                        </div>
+
+                        <div class="col-lg-12 col-12 mt-auto d-flex flex-row text-center justify-content-md-around justify-content-center">
+                            <div class="date-wrap">
+                                <h5 class="text-white">
+                                    <i class="custom-icon bi-clock me-2"></i>
+                                    18, 19, 25 en 26 april 2025
+                                </h5>
+                            </div>
+
+                            <div class="location-wrap mx-auto d-none d-xl-inline">
+                                <h5 class="text-white">
+                                    <i class="custom-icon bi-geo-alt me-2"></i>
+                                    <span>GC Gerard Walschap, </span>Londerzeel
+                                </h5>
+                            </div>
+
+                            <div class="social-share d-none d-md-block">
+                                <ul class="social-icon d-flex align-items-center justify-content-center">
+                                    <span class="text-white me-3">Volg ons</span>
+
+                                    <li class="social-icon-item">
+                                        <a title="Instagram" href="https://www.instagram.com/theateralternatief/" class="social-icon-link">
+                                            <span class="bi-instagram"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a title="Facebook" href="https://www.facebook.com/TheaterAlternatief/" class="social-icon-link">
+                                            <span class="bi-facebook"></span>
+                                        </a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a title="Schrijf je in op de nieuwsbrief" href="http://eepurl.com/ckTpmf" class="social-icon-link">
+                                            <span class="bi-envelope-at"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-wrap">
+                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                        <source src="/resources/video/portrait.mp4?v=3" type="video/mp4">
+
+                        Your browser does not support the video tag.
+                    </video>
+                    <script type="text/javascript">
+                        var video = document.getElementsByClassName('custom-video')[0];
+                        function play(src) {
+                            var video = document.getElementsByClassName('custom-video')[0];
+                            if(video.firstElementChild.getAttribute('src') != src) {
+                                video.firstElementChild.setAttribute('src', src);
+                                video.load();
+                            }
+                        }
+                        function orientate(){
+
+                            if(window.innerWidth > window.innerHeight){     
+                                //console.log('orient to land');    
+                                play('/resources/video/landscape.mp4?v=3');
+                            } else {
+                                //console.log('orient to port');    
+                                play('/resources/video/portrait.mp4?v=3');
+                            }
+                        }
+                        let portrait = window.matchMedia("(orientation: portrait)");
+
+                        portrait.addEventListener("change", function(e) {
+                            orientate();
+                        })
+
+                        
+                        orientate();
+                    </script>                  
+                </div>
+            </section>
+
+
+            <section class="about-section section-padding" id="over">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                            <div class="services-info">
+                                <h2 class="text-white mb-4">Kindertransport</h2>
+                                <p class="text-white">
+                                    <span class="lead">van Diane Samuels – Vertaling : Olivier Kloeck</span>
+                                    <br>
+                                    Regie: Roland De Blende.
+                                    <br>
+                                    <small>Deze amateurproductie wordt gebracht in samenwerking met Auteursbureau ALMO bvba</small>
+                                </p>
+                                
+                                <p class="text-white">
+                                    Kindertransport van Diane Samuels vertelt het verhaal van de jonge Duitse vluchtelinge Eva
+die aan de vooravond van de Tweede Wereldoorlog met een kindertransport van Duitsland
+naar Engeland wordt gestuurd. In Engeland wacht Eva een veilige toekomst. Veiligheid heeft
+echter een prijs. Terwijl ze worstelt met een nieuwe taal, een andere cultuur en het verlies van
+haar familie, staat Eva voor de hartverscheurende keuze : blijft ze trouw aan haar afkomst of
+laat ze haar verleden los om te overleven ?
+                                </p>
+                                <p class="text-white">
+Stap binnen in een wereld waar verleden en heden elkaar raken, waar keuzes weerklinken
+door de tijd en waar een klein gebaar het verschil kan maken. Kindertransport is een
+aangrijpende voorstelling over moed, identiteit en de onuitwisbare stempel van het verleden.
+Laat je raken door een verhaal dat je niet meer loslaat. Mis deze bijzondere voorstelling
+niet!
+                            </p>                                                         
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            
+                            <div class="about-text-wrap">
+                                <img src="/resources/images/cast.png?v=4" class="about-image img-fluid">    
+
+                                <div class="about-text-info">
+                                        <p class="mb-0">
+                                            <strong>Met (<abbr title="Van links naar rechts">vlnr</abbr>):</strong>
+                                            Karla&nbsp;Van Schoor, 
+                                            Margot&nbsp;Claeys, 
+                                            Piet&nbsp;Wouters (boven), 
+                                            Lien&nbsp;Vernimmen (zittend), 
+                                            Ellen&nbsp;Van&nbsp;den&nbsp;Broeck en
+                                            Lea&nbsp;Van&nbsp;der&nbsp;Beken
+                                            .
+                                        </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="performances-section section-padding" id="voorstellingen">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <div class="col-12 mx-auto">
+                            <h2 class="text-center mb-4">Voorstellingen</h2>
+                        </div>
+                        
+                        <p class="lead text-center container-lead-text">
+                            
+                        </p>
+
+                        <div class="col-lg-5 col-12 container-shows">
+                            <div class="spinner d-flex justify-content-center m-5">
+                                <div class="spinner-border" style="width: 5rem; height: 5rem;" role="status">
+                                </div>
+                            </div>
+                        </div>
+
+
+                         <div class="col-lg-5 col-12 justify-content-end">
+                            <div class="d-flex m-2 mb-4">
+                                <div><i class="custom-icon bi-geo-alt me-2"></i></div>
+                                <div>
+                                    <div class="performance-title">Locatie</div>
+                                    <div>GC Gerard Walschap</div>
+                                    <div>Sint Jozefstraat 44</div>
+                                    <div>1840 Londerzeel</div>
+                                    <div><a href="https://goo.gl/maps/qCmK3eEN9XFDBozx9"><i class="custom-icon bi-pin-map me-2"></i>Google maps</a></div>
+                                </div>
+                            </div>
+                            <div class="d-flex m-2 mb-4">
+                                <div><i class="custom-icon bi-cash-coin me-2"></i></div>
+                                <div>
+                                    <div class="performance-title">Toegangsprijs</div>    
+                                    <div>12 Euro</div>                            
+                                </div>
+                            </div>
+                            <div class="d-flex m-2 mb-4">
+                                <div><i class="custom-icon bi-clock me-2"></i></div>
+                                <div>
+                                    <div>Deuren: 19u</div>
+                                    <div>Voorstelling: 20u</div>
+                                </div>
+                            </div>                                                
+                        </div>
+                       
+                 
+                        <p class="text-center">Vragen of problemen bij de reservatie? Contacteer ons op <a href="mailto:reservatie@theateralternatief.be">reservatie@theateralternatief.be</a>.
+                        </p>                        
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="newsletter-section section-padding">
+                <div class="container">
+                    <div class="row justify-content-center text-center">
+                        <h2 class="mb-4 text-white">Blijf op de hoogte</h2>
+                        <p class="text-white"><a class="text-white" target="_blank" href="http://eepurl.com/ckTpmf">Schrijf je in</a> voor onze nieuwsbrief</p> 
+                        <p class="text-white">Volg ons op <a class="text-white"target="_blank"  href="https://www.instagram.com/theateralternatief/">Instagram</a> en <a class="text-white" target="_blank" href="https://www.facebook.com/TheaterAlternatief/">Facebook</a></p>
+                    </div>
+                </div>
+            </section>
+               <section class="artists-section section-padding" id="groep">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <div class="col-12 text-center">
+                            <h2 class="mb-4">Onze groep</h2>
+                        </div>
+
+                        <div class="col-lg-5 col-12">
+                            <p>Theater Alternatief werd in 2008 opgericht met als doel eigentijds repertoiretheater voor een breed publiek te brengen. 
+                            </p>
+                            <p>Theater Alternatief heeft een voorliefde voor sterke, emotionele theaterteksten die de tekst ten volle op het voorplan brengen en grijpt daarvoor geregeld terug naar buitenlandse auteurs en stukken die de canon van het theater uitmaken. Waar mogelijk kiest ze echter voor talent van eigen bodem. 
+                            </p>
+
+                            <p>Ook voor de keuze van acteurs en medewerkers kiest Alternatief de weg van het talent. De groep speelt opzettelijk niet op safe door uitsluitend te kiezen voor gevestigde waarden uit de amateurtoneelwereld maar geeft ook jonge en onervaren acteurs en actrices de kans hun eerste stappen op het podium te wagen. Meer nog: de groep geeft deze jonge mensen met een passie voor theater ook de mogelijkheid om productie na productie te groeien.
+                            </p>
+                            <p>
+                                <a class="btn btn-dark" href="/producties">Bekijk onze afgelopen producties</a>
+                            </p>
+                        
+
+                            <h5>Ik wil meedoen!</h5>
+                            <p>
+                                Zowel op het podium als achter de schermen is er ruimte voor nieuwe medewerkers en helpende handen. Als je deel wilt uitmaken van ons avontuur, laat dan van je horen!
+                            </p>
+                            <h5>Ik ken een leuke locatie</h5>
+                            <p>
+                                Theater Alternatief is voortdurend op zoek naar gepaste locaties voor haar stukken. Kent u een locatie die zich leent voor toneel ? Of bent u eigenaar of uitbater van zo’n locatie ? Geef dan vlug een seintje.
+                            </p>
+                            <h5>Contacteer ons</h5>
+                            <p>Je kan ons bereiken via <a href="mailto:info@theateralternatief.be">info@theateralternatief.be</a> of via onze sociale media.</p>
+                        </div>
+
+                        <div class="col-lg-5 col-12">
+                            <div class="artists-thumb">                                
+                                    <img src="resources/images/ambient.jpg" class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-thumb">
+                                <img src="resources/images/ambient2.jpg" class="artists-image img-fluid">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-auto col-12">
+                        <h4 class="text-white mb-lg-0 text-center">Volg Theater Alternatief</h4>
+                    </div>
+
+                    <div class="col-lg col-12 d-flex justify-content-center justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-end">
+
+                            <li class="social-icon-item">
+                                <a title="Instagram" href="https://www.instagram.com/theateralternatief/" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a title="Facebook" href="https://www.facebook.com/TheaterAlternatief/" class="social-icon-link">
+                                    <span class="bi-facebook"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a title="Schrijf je in op de nieuwsbrief" href="http://eepurl.com/ckTpmf" class="social-icon-link">
+                                    <span class="bi-envelope-at"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script is:inline
+              src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
+              integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
+              crossorigin="anonymous"></script>
+        <script is:inline src="/resources/js/ta.js"></script>
+        <script is:inline src="/resources/js/booking.js"></script>
+
+
+<template id="showrow">
+    <div class="d-flex justify-content-between performance-block">
+        <div class="p-2">
+            <i class="custom-icon bi-clock me-2"></i> 
+            <span></span>           
+        </div>
+        <div> 
+            <form method="get" action="/reservatie">           
+                <button type="submit" class="btn custom-btn"></button>
+            </form>
+        </div>
+    </div>
+</template>
+</body>
+
+
+
 </Layout>
