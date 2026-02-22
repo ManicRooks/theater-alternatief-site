@@ -9,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
             <nav class="navbar navbar-main navbar-expand">
                 <div class="container justify-content-lg-between justify-content-center">
                     <a class="navbar-brand" href="/">
-                        <img src="/resources/images/logo.png?v=2" alt="Theater Alternatief">
+                        <img src="resources/images/logo.png?v=2" alt="Theater Alternatief">
                     </a>
 
                     <div>
@@ -93,7 +93,7 @@ import Layout from '../layouts/Layout.astro';
 
                 <div class="video-wrap">
                     <video autoplay="" loop="" muted="" class="custom-video" poster="">
-                        <source src="/resources/video/portrait.mp4?v=3" type="video/mp4">
+                        <source src={`${import.meta.env.BASE_URL}/resources/video/portrait.mp4?v=3}`} type="video/mp4">
 
                         Your browser does not support the video tag.
                     </video>
@@ -110,10 +110,10 @@ import Layout from '../layouts/Layout.astro';
 
                             if(window.innerWidth > window.innerHeight){     
                                 //console.log('orient to land');    
-                                play('/resources/video/landscape.mp4?v=3');
+                                play({`${import.meta.env.BASE_URL}/resources/video/landscape.mp4?v=3`});
                             } else {
                                 //console.log('orient to port');    
-                                play('/resources/video/portrait.mp4?v=3');
+                                play({`${import.meta.env.BASE_URL}/resources/video/portrait.mp4?v=3`});
                             }
                         }
                         let portrait = window.matchMedia("(orientation: portrait)");
@@ -165,7 +165,7 @@ niet!
                         <div class="col-lg-6 col-12">
                             
                             <div class="about-text-wrap">
-                                <img src="/resources/images/cast.png?v=4" class="about-image img-fluid">    
+                                <img src={`resources/images/cast.png?v=4`}" class="about-image img-fluid">    
 
                                 <div class="about-text-info">
                                         <p class="mb-0">
@@ -268,7 +268,7 @@ niet!
                             <p>Ook voor de keuze van acteurs en medewerkers kiest Alternatief de weg van het talent. De groep speelt opzettelijk niet op safe door uitsluitend te kiezen voor gevestigde waarden uit de amateurtoneelwereld maar geeft ook jonge en onervaren acteurs en actrices de kans hun eerste stappen op het podium te wagen. Meer nog: de groep geeft deze jonge mensen met een passie voor theater ook de mogelijkheid om productie na productie te groeien.
                             </p>
                             <p>
-                                <a class="btn btn-dark" href="/producties">Bekijk onze afgelopen producties</a>
+                                <a class="btn btn-dark" href="producties">Bekijk onze afgelopen producties</a>
                             </p>
                         
 
@@ -286,11 +286,11 @@ niet!
 
                         <div class="col-lg-5 col-12">
                             <div class="artists-thumb">                                
-                                    <img src="resources/images/ambient.jpg" class="artists-image img-fluid">
+                                    <img src={`resources/images/ambient.jpg`} class="artists-image img-fluid">
                             </div>
 
                             <div class="artists-thumb">
-                                <img src="resources/images/ambient2.jpg" class="artists-image img-fluid">
+                                <img src={`resources/images/ambient2.jpg`} class="artists-image img-fluid">
                             </div>
                         </div>
 
@@ -341,8 +341,8 @@ niet!
               src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
               integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
               crossorigin="anonymous"></script>
-        <script is:inline src="/resources/js/ta.js"></script>
-        <script is:inline src="/resources/js/booking.js"></script>
+        <script is:inline src={`resources/js/ta.js`}></script>
+        <script is:inline src={`resources/js/booking.js`}></script>
 
 
 <template id="showrow">
