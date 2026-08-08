@@ -21,7 +21,7 @@ $(document).ready(function(){
 });
 
 function loadBooking(callback) {
- 	fetch('reservatie/data.json.php')
+ 	fetch('/resources/data.json')
 	  .then(response => {
 	    if (!response.ok) {
 	      throw new Error('Network response was not ok');
