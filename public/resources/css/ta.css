@@ -655,15 +655,9 @@ strong {
   margin: .5rem;
 }
 
-.performance-block a {
+.performance-block .custom-btn {
   font-size: var(--p-font-size);
-  background: var(--custom-btn-bg-color);
-  border: 2px solid transparent;
   border-radius: var(--border-radius-small);
-  color: var(--white-color);
-  font-weight: var(--font-weight-bold);
-  line-height: normal;
-  transition: all 0.3s;
   padding: 10px 20px;
 }
 
@@ -789,8 +783,7 @@ strong {
   .performance-block i {
     display: none;
   }
-  .performance-block a {
-    
+  .performance-block .custom-btn {
     padding: 5px 5px;
   }
   .about-section {
@@ -848,6 +841,33 @@ strong {
 
 }
 
+
+/*---------------------------------------
+  BOOKING MODAL
+-----------------------------------------*/
+#bookingModal .modal-header {
+  background-color: var(--secondary-color);
+}
+
+#bookingModal .modal-title {
+  color: var(--white-color);
+  font-size: var(--h6-font-size);
+}
+
+#bookingModal .form-label {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--about-font-size);
+  color: var(--dark-color);
+}
+
+#bookingModal .form-text {
+  font-size: 14px;
+}
+
+#booking-confirmation li {
+  padding: 2px 0;
+  font-size: var(--about-font-size);
+}
 
 /*****
  * PRODUCTIONS

@@ -330,6 +330,9 @@ Verwacht een avond vol humor, misverstanden en verrassende wendingen!
               src="https://code.jquery.com/jquery-3.6.3.slim.min.js"
               integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo="
               crossorigin="anonymous"></script>
+        <script is:inline
+              src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+              crossorigin="anonymous"></script>
         <script is:inline src={`resources/js/ta.js`}></script>
         <script is:inline src={`resources/js/booking.js`}></script>
 
@@ -337,16 +340,96 @@ Verwacht een avond vol humor, misverstanden en verrassende wendingen!
 <template id="showrow">
     <div class="d-flex justify-content-between performance-block">
         <div class="p-2">
-            <i class="custom-icon bi-clock me-2"></i> 
-            <span></span>           
+            <i class="custom-icon bi-clock me-2"></i>
+            <span></span>
         </div>
-        <div> 
-            <form method="get" action="/reservatie">           
-                <button type="submit" class="btn custom-btn"></button>
-            </form>
+        <div>
+            <button type="button" class="btn custom-btn"></button>
         </div>
     </div>
 </template>
+
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLabel">Reservatie &lsquo;De Doemdenker&rsquo;</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Sluiten"></button>
+      </div>
+      <div class="modal-body">
+        <div id="booking-error" class="alert alert-danger" style="display: none;"></div>
+
+        <div id="booking-form-container">
+          <p class="mb-3">
+            <i class="bi-clock me-1"></i>
+            <strong id="modal-selected-date"></strong>
+          </p>
+
+          <form id="booking-form" novalidate>
+            <input type="hidden" id="bookingDate" name="bookingDate">
+
+            <div class="mb-3">
+              <label for="bookingName" class="form-label">Naam <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="bookingName" required>
+              <div class="invalid-feedback">Vul uw naam in.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="bookingEmail" class="form-label">E-mail <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" id="bookingEmail" required>
+              <div class="invalid-feedback">Vul een geldig e-mailadres in.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="bookingSeats" class="form-label">Aantal plaatsen <span class="text-danger">*</span></label>
+              <input type="number" class="form-control" id="bookingSeats" min="1" max="10" value="2" required>
+              <div class="form-text">Maximum 10. Meer nodig? <a href="mailto:reservatie@theateralternatief.be">Contacteer ons</a>.</div>
+              <div class="invalid-feedback">Kies een aantal tussen 1 en 10.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="bookingRemarks" class="form-label">Opmerkingen</label>
+              <textarea class="form-control" id="bookingRemarks" rows="2"></textarea>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="bookingNewsletter">
+              <label class="form-check-label" for="bookingNewsletter">
+                Ik wil via e-mail op de hoogte gehouden worden van de producties van Theater Alternatief.
+              </label>
+            </div>
+
+            <p class="form-text mb-3">
+              Privacy: Theater Alternatief gebruikt deze gegevens uitsluitend om de reservatie correct te laten verlopen, deze worden nooit doorgegeven aan derden.
+            </p>
+
+            <button type="submit" class="btn custom-btn w-100">Nu reserveren</button>
+          </form>
+        </div>
+
+        <div id="booking-confirmation" style="display: none;">
+          <div class="text-center mb-3">
+            <i class="bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+          </div>
+          <h5>Bedankt voor uw reservatie!</h5>
+          <p>Er werd een e-mail ter bevestiging verstuurd naar <strong class="conf-email"></strong>.</p>
+          <ul class="list-unstyled">
+            <li><strong>Code:</strong> <span class="conf-code"></span></li>
+            <li><strong>Naam:</strong> <span class="conf-name"></span></li>
+            <li><strong>E-mail:</strong> <span class="conf-email"></span></li>
+            <li><strong>Voorstelling:</strong> <span class="conf-date"></span></li>
+            <li><strong>Aantal plaatsen:</strong> <span class="conf-seats"></span></li>
+            <li><strong>Opmerkingen:</strong> <span class="conf-remarks"></span></li>
+          </ul>
+          <p>Er is geen verdere actie vereist, u wordt verwacht vanaf 19u.</p>
+          <p>De toegangsprijs bedraagt 12 Euro per plaats, u kan bij aankomst betalen met cash of payconiq.</p>
+          <p>Wenst u uw reservatie te wijzigen? Contacteer ons op <a href="mailto:reservatie@theateralternatief.be">reservatie@theateralternatief.be</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 
 
