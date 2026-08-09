@@ -184,7 +184,7 @@ function sendConfirmationEmail(id, name, email, bookingDate, seats, remarks) {
     + '<li>Opmerkingen: ' + (remarks || '-') + '</li>'
     + '</ul>'
     + '<p>Er is geen verdere actie vereist, u wordt verwacht vanaf 19u.</p>'
-    + '<p>De toegangsprijs bedraagt 12 Euro per plaats, u kan bij aankomst betalen met cash of payconiq.</p>'
+    + '<p>De toegangsprijs bedraagt 12 Euro per plaats, u kan bij aankomst betalen met cash of QR code.</p>'
     + '<p>Wenst u uw reservatie te wijzigen? Contacteer ons op '
     + '<a href="mailto:reservatie@theateralternatief.be">reservatie@theateralternatief.be</a>.</p>'
     + '<br>Met vriendelijke groeten,<br>Theater Alternatief';
